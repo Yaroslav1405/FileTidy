@@ -1,4 +1,3 @@
-import pathlib
 import customtkinter as ctk
 
 def get_font(family='Trebuchet MS', size=14, weight='normal', slant='roman', underline=False):

@@ -2,7 +2,6 @@ import customtkinter as ctk
 from PIL import Image
 from view.fonts import *
 from pathlib import Path
-from tkinter import PhotoImage
 
 class SettingsWindow(ctk.CTkToplevel):
     def __init__(self, master, default_gray):
@@ -11,9 +10,11 @@ class SettingsWindow(ctk.CTkToplevel):
         super().__init__(master)
         self.geometry("400x300")
         self.wm_attributes("-topmost", True)
+        self.title("FileTidy")
+        
         
         # Get correct icon path
-        base_dir = pathlib.Path(__file__).resolve().parent.parent  
+        base_dir = Path(__file__).resolve().parent.parent  
         icon_path = base_dir.joinpath('src', 'img', 'app_icon.ico')
 
         # Delay setting icon to override customtkinter default behavior
@@ -42,7 +43,7 @@ class SettingsWindow(ctk.CTkToplevel):
         self.change_mode_btn = ctk.CTkButton(self, text_color='#d6d6d6', fg_color='#2b2b2b', hover_color=default_gray, text='Switch Mode', font=small_button_font(), image=self.img_mode, command=self.change_mode)
         self.change_mode_btn.grid(row=1, column=0, pady = (10,5), sticky='ns')
               
-        
+    # Change mode (dark/light)    
     def change_mode(self):
         if self.mode == 'dark':
             ctk.set_appearance_mode("light")

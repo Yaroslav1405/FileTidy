@@ -2,7 +2,6 @@ import os
 import tkinter as tk
 from tkinter import filedialog
 import customtkinter as ctk
-from PIL import Image, ImageTk
 from view.fonts import *
 from CTkMessagebox import CTkMessagebox
 
@@ -68,6 +67,7 @@ class DeleteFiles(ctk.CTkFrame):
     # File deletion 
     def delete_files(self):
         file_type = self.file_type_dropdown.get().strip()
+        # Logic for removing file
         if os.path.isdir(self.folder_path) and file_type:
             deleted_count = 0
             for file in os.listdir(self.folder_path):

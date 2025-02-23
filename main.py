@@ -1,9 +1,5 @@
-import time
-import os 
-import shutil
-import tkinter as tk
 import customtkinter as ctk
-from PIL import Image, ImageTk
+from PIL import Image
 from view.fonts import *
 import pathlib
 from view.delete_files import DeleteFiles
@@ -89,7 +85,7 @@ class App(ctk.CTk):
     def __init__(self):
         super().__init__()
         
-        self.title('File Organizer')
+        self.title('FileTidy')
         self.geometry(f"{self.width}x{self.height}")
         self.resizable(False, False)  
         self.iconbitmap(pathlib.Path(__file__).parent.resolve().joinpath('src', 'img', 'app_icon.ico'))
@@ -114,7 +110,7 @@ class App(ctk.CTk):
         # Show default frame (About)
         self.show_about_frame()
         
-    
+    # Display specified frame
     def show_delete_files_frame(self):
         if self.delete_files_frame is None:
             # Initialize DeleteFilesUI only when needed

@@ -18,7 +18,7 @@ class About(ctk.CTkFrame):
         self.title.grid(row=0, column=1, pady=(40,25))
         
         # Program description
-        self.about_text = "FileTidy is a simple tool designed to help user organize and clean up files with ease. \
+        self.about_text = "FileTidy is a simple tool designed to help the user organize and clean up files with ease. \
             Select a folder, sort files into subfolders, or delete unwanted ones — all in a few clicks. Keep your workspace neat and clutter-free effortlessly."
         self.description = ctk.CTkLabel(self, text=self.about_text, wraplength=400, justify='center', font=body_font())
         self.description.grid(row=1,column=1, padx=75, pady=25, sticky='n')
