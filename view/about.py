@@ -33,7 +33,7 @@ class About(ctk.CTkFrame):
 
         # Hyperlink label
         link = ctk.CTkLabel(self, text=self.link_text, cursor="hand2", font=link_font())
-        link.bind("<Button-1>", lambda e: self.open_link("https://www.example.com"))
+        link.bind("<Button-1>", lambda e: self.open_link("https://linktr.ee/yaroslavhinda"))
         link.grid(row=3, column=1, pady=(0,5), sticky='sw')
 
         

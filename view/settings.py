@@ -25,7 +25,6 @@ class SettingsWindow(ctk.CTkToplevel):
         self.grid_columnconfigure(0, weight=1)
         self.grid_rowconfigure(0, weight=0)  # Title row
         self.grid_rowconfigure(1, weight=0)  # Mode Switch button (fixed)
-        self.grid_rowconfigure(2, weight = 0) # Theme Switch button (fixed)
         
         # Define paths 
         current_dir = Path(__file__).resolve().parent
@@ -42,18 +41,7 @@ class SettingsWindow(ctk.CTkToplevel):
         self.img_mode = ctk.CTkImage(mode_img, size=(14,14))
         self.change_mode_btn = ctk.CTkButton(self, text_color='#d6d6d6', fg_color='#2b2b2b', hover_color=default_gray, text='Switch Mode', font=small_button_font(), image=self.img_mode, command=self.change_mode)
         self.change_mode_btn.grid(row=1, column=0, pady = (10,5), sticky='ns')
-        
-        # Theme setting
-        theme_img = Image.open(
-            img_path.joinpath('theme_switch.png')).resize((14,14), Image.Resampling.LANCZOS
-        )
-        self.img_theme = ctk.CTkImage(theme_img, size=(14,14))
-        color = ["blue", "green", "dark-blue"]
-        self.theme_option = ctk.CTkOptionMenu(self, values = color, command = self.change_theme)
-        self.theme_option.grid(row=2, column=0, pady=(5,0), sticky='ns')
-        #self.change_theme_btn = ctk.CTkButton(self, text_color='#d6d6d6', fg_color='#2b2b2b', hover_color=default_gray, text='Switch Theme', font=small_font(), image=self.img_theme, command=self.change_theme)
-        #self.change_theme_btn.grid(row=2, column=0, pady= (5,0), sticky='ns')
-        
+              
         
     def change_mode(self):
         if self.mode == 'dark':
@@ -63,10 +51,6 @@ class SettingsWindow(ctk.CTkToplevel):
             ctk.set_appearance_mode('dark')
             self.mode = 'dark' 
             
-    def change_theme(self,choice):
-        # Switch to the new theme
-        ctk.set_default_color_theme(choice)
-
                 
     # Close settings
     def close(self):
