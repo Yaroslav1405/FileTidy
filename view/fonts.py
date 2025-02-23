@@ -16,13 +16,21 @@ def button_font(size=24):
 
 def heading_font(size=22):
     # Preset for heading font
-    return get_font(size=size, weight='bold')
+    return get_font(size=size, weight='normal')
 
 def body_font(size=18):
     # Preset for body font (e.g. body text)
     return get_font(size=size)
 
 
-def small_font(size=16):
-    # Preset for small fonts (e.g. footer)
+def small_button_font(size=16):
+    # Preset for small buttons font
+    return get_font(size=size)
+
+def link_font(size=12):
+    # Preset for link font
+    return get_font(size=size, underline=True)
+
+def footer_font(size=12):
+    # Preset for footer font
     return get_font(size=size)
